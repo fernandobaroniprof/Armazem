@@ -3,7 +3,7 @@ using System.IO;
 
 public class MainManager : MonoBehaviour
 {
-    public static MainManager Instance;
+    public static MainManager Instance { get; private set; }
     public Color TeamColor;
 
     public void Awake()
@@ -35,7 +35,7 @@ public void SaveColor()
     File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
 
     // Remova o comentário abaixopara abrire o arquivo JSON no editor 
-    //Application.OpenURL(Application.persistentDataPath + "/savefile.json");
+    Application.OpenURL(Application.persistentDataPath + "/savefile.json");
     }
 public void LoadColor()
 {

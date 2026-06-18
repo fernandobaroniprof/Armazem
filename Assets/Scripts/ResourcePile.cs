@@ -9,10 +9,17 @@ using UnityEngine;
 public class ResourcePile : Building
 {
     public ResourceItem Item;
+    public float m_ProductionSpeed = 0.5f;
 
-    public float ProductionSpeed = 0.5f;
+    private float ProductionSpeed
+    {
+        get { return m_ProductionSpeed; } 
+        set { m_ProductionSpeed = value; } 
+    }
+
 
     private float m_CurrentProduction = 0.0f;
+
 
     private void Update()
     {
